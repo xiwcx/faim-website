@@ -1,0 +1,9 @@
+overwrite: true
+generates:
+  generated/sdk.ts:
+    schema: "https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/?access_token=${CONTENTFUL_ACCESS_TOKEN}"
+    documents: "./utils/graph/**/*.graphql"
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request

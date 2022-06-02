@@ -1,0 +1,18 @@
+query getReleases {
+  releaseCollection {
+    items {
+      ...Release
+    }
+  }
+}
+
+fragment Release on Release {
+  title
+  releaseDate
+  cover {
+    url
+  }
+  hrefYouTube
+  hrefSpotify
+  hrefBandcamp
+}
