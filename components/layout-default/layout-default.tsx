@@ -1,6 +1,7 @@
 import { G } from "@mobily/ts-belt";
 import Head from "next/head";
 import "./layout-default.css.ts";
+import { NavLink } from "./nav-link";
 
 interface LayoutDefaultProps {
   subtitle?: string;
@@ -25,6 +26,12 @@ const LayoutDefault = ({ children, subtitle }: LayoutDefaultProps) => {
       </Head>
       <header>
         <h1>Faim</h1>
+
+        <nav>
+          <NavLink href="/" text="releases" />
+          <NavLink href="/links/" text="links" />
+          <NavLink href="/store/" text="store" />
+        </nav>
       </header>
       <main>{children}</main>
     </div>

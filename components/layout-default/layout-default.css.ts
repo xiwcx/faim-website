@@ -9,3 +9,7 @@ globalStyle("body", {
   backgroundColor: styleVars.color.navy,
   color: styleVars.color.yellow,
 });
+
+globalStyle("img", {
+  maxWidth: "100%",
+});

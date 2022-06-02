@@ -18,7 +18,7 @@ const colorSwatches = pipe(
   D.values
 );
 
-const Home: NextPage = () => {
+const Styleguide: NextPage = () => {
   return (
     <LayoutDefault>
       <h1>Styleguide</h1>
@@ -32,4 +32,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Styleguide;
