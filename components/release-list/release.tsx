@@ -19,11 +19,17 @@ export const Release = ({ release }: ReleaseProps) => {
         {G.isString(release.hrefBandcamp) && (
           <ReleaseLink href={release.hrefBandcamp} brand="bandcamp" />
         )}
+
         {G.isString(release.hrefSpotify) && (
           <ReleaseLink href={release.hrefSpotify} brand="spotify" />
         )}
+
         {G.isString(release.hrefYouTube) && (
           <ReleaseLink href={release.hrefYouTube} brand="youtube" />
+        )}
+
+        {G.isString(release.hrefAppleMusic) && (
+          <ReleaseLink href={release.hrefAppleMusic} brand="apple" />
         )}
       </ul>
     </div>

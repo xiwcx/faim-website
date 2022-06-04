@@ -431,6 +431,7 @@ export type Release = Entry & {
   __typename?: 'Release';
   contentfulMetadata: ContentfulMetadata;
   cover?: Maybe<Asset>;
+  hrefAppleMusic?: Maybe<Scalars['String']>;
   hrefBandcamp?: Maybe<Scalars['String']>;
   hrefSpotify?: Maybe<Scalars['String']>;
   hrefYouTube?: Maybe<Scalars['String']>;
@@ -445,6 +446,12 @@ export type Release = Entry & {
 export type ReleaseCoverArgs = {
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/xzrad7jgy9vu/content_types/release) */
+export type ReleaseHrefAppleMusicArgs = {
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -496,6 +503,13 @@ export type ReleaseFilter = {
   OR?: InputMaybe<Array<InputMaybe<ReleaseFilter>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   cover_exists?: InputMaybe<Scalars['Boolean']>;
+  hrefAppleMusic?: InputMaybe<Scalars['String']>;
+  hrefAppleMusic_contains?: InputMaybe<Scalars['String']>;
+  hrefAppleMusic_exists?: InputMaybe<Scalars['Boolean']>;
+  hrefAppleMusic_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  hrefAppleMusic_not?: InputMaybe<Scalars['String']>;
+  hrefAppleMusic_not_contains?: InputMaybe<Scalars['String']>;
+  hrefAppleMusic_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   hrefBandcamp?: InputMaybe<Scalars['String']>;
   hrefBandcamp_contains?: InputMaybe<Scalars['String']>;
   hrefBandcamp_exists?: InputMaybe<Scalars['Boolean']>;
@@ -550,6 +564,8 @@ export type ReleaseLinkingCollectionsEntryCollectionArgs = {
 };
 
 export enum ReleaseOrder {
+  HrefAppleMusicAsc = 'hrefAppleMusic_ASC',
+  HrefAppleMusicDesc = 'hrefAppleMusic_DESC',
   HrefBandcampAsc = 'hrefBandcamp_ASC',
   HrefBandcampDesc = 'hrefBandcamp_DESC',
   HrefSpotifyAsc = 'hrefSpotify_ASC',
@@ -620,9 +636,9 @@ export type SysFilter = {
 export type GetReleasesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetReleasesQuery = { __typename?: 'Query', releaseCollection?: { __typename?: 'ReleaseCollection', items: Array<{ __typename?: 'Release', title?: string | null, releaseDate?: any | null, hrefYouTube?: string | null, hrefSpotify?: string | null, hrefBandcamp?: string | null, cover?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+export type GetReleasesQuery = { __typename?: 'Query', releaseCollection?: { __typename?: 'ReleaseCollection', items: Array<{ __typename?: 'Release', title?: string | null, releaseDate?: any | null, hrefAppleMusic?: string | null, hrefYouTube?: string | null, hrefSpotify?: string | null, hrefBandcamp?: string | null, cover?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
 
-export type ReleaseFragment = { __typename?: 'Release', title?: string | null, releaseDate?: any | null, hrefYouTube?: string | null, hrefSpotify?: string | null, hrefBandcamp?: string | null, cover?: { __typename?: 'Asset', url?: string | null } | null };
+export type ReleaseFragment = { __typename?: 'Release', title?: string | null, releaseDate?: any | null, hrefAppleMusic?: string | null, hrefYouTube?: string | null, hrefSpotify?: string | null, hrefBandcamp?: string | null, cover?: { __typename?: 'Asset', url?: string | null } | null };
 
 export const ReleaseFragmentDoc = gql`
     fragment Release on Release {
@@ -631,6 +647,7 @@ export const ReleaseFragmentDoc = gql`
   cover {
     url
   }
+  hrefAppleMusic
   hrefYouTube
   hrefSpotify
   hrefBandcamp
