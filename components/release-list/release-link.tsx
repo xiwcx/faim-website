@@ -1,7 +1,7 @@
 import type { ReleaseFragment } from "../../generated/sdk";
 
 interface ReleaseLinkProps {
-  brand: "youtube" | "spotify" | "bandcamp";
+  brand: "apple" | "youtube" | "spotify" | "bandcamp";
   href: string;
 }
 

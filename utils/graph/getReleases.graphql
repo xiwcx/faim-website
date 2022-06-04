@@ -12,6 +12,7 @@ fragment Release on Release {
   cover {
     url
   }
+  hrefAppleMusic
   hrefYouTube
   hrefSpotify
   hrefBandcamp
