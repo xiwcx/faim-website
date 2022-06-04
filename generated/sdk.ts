@@ -179,11 +179,20 @@ export type AssetFilter = {
 export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
+  linkCollection?: Maybe<LinkCollection>;
   releaseCollection?: Maybe<ReleaseCollection>;
 };
 
 
 export type AssetLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type AssetLinkingCollectionsLinkCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
@@ -373,11 +382,135 @@ export type ImageTransformOptions = {
   width?: InputMaybe<Scalars['Dimension']>;
 };
 
+/** [See type definition](https://app.contentful.com/spaces/xzrad7jgy9vu/content_types/link) */
+export type Link = Entry & {
+  __typename?: 'Link';
+  category?: Maybe<Scalars['String']>;
+  contentfulMetadata: ContentfulMetadata;
+  href?: Maybe<Scalars['String']>;
+  image?: Maybe<Asset>;
+  isPinned?: Maybe<Scalars['Boolean']>;
+  label?: Maybe<Scalars['String']>;
+  linkedFrom?: Maybe<LinkLinkingCollections>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/xzrad7jgy9vu/content_types/link) */
+export type LinkCategoryArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/xzrad7jgy9vu/content_types/link) */
+export type LinkHrefArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/xzrad7jgy9vu/content_types/link) */
+export type LinkImageArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/xzrad7jgy9vu/content_types/link) */
+export type LinkIsPinnedArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/xzrad7jgy9vu/content_types/link) */
+export type LinkLabelArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/xzrad7jgy9vu/content_types/link) */
+export type LinkLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type LinkCollection = {
+  __typename?: 'LinkCollection';
+  items: Array<Maybe<Link>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type LinkFilter = {
+  AND?: InputMaybe<Array<InputMaybe<LinkFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<LinkFilter>>>;
+  category?: InputMaybe<Scalars['String']>;
+  category_contains?: InputMaybe<Scalars['String']>;
+  category_exists?: InputMaybe<Scalars['Boolean']>;
+  category_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  category_not?: InputMaybe<Scalars['String']>;
+  category_not_contains?: InputMaybe<Scalars['String']>;
+  category_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  href?: InputMaybe<Scalars['String']>;
+  href_contains?: InputMaybe<Scalars['String']>;
+  href_exists?: InputMaybe<Scalars['Boolean']>;
+  href_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  href_not?: InputMaybe<Scalars['String']>;
+  href_not_contains?: InputMaybe<Scalars['String']>;
+  href_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  image_exists?: InputMaybe<Scalars['Boolean']>;
+  isPinned?: InputMaybe<Scalars['Boolean']>;
+  isPinned_exists?: InputMaybe<Scalars['Boolean']>;
+  isPinned_not?: InputMaybe<Scalars['Boolean']>;
+  label?: InputMaybe<Scalars['String']>;
+  label_contains?: InputMaybe<Scalars['String']>;
+  label_exists?: InputMaybe<Scalars['Boolean']>;
+  label_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  label_not?: InputMaybe<Scalars['String']>;
+  label_not_contains?: InputMaybe<Scalars['String']>;
+  label_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type LinkLinkingCollections = {
+  __typename?: 'LinkLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type LinkLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum LinkOrder {
+  CategoryAsc = 'category_ASC',
+  CategoryDesc = 'category_DESC',
+  HrefAsc = 'href_ASC',
+  HrefDesc = 'href_DESC',
+  IsPinnedAsc = 'isPinned_ASC',
+  IsPinnedDesc = 'isPinned_DESC',
+  LabelAsc = 'label_ASC',
+  LabelDesc = 'label_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 export type Query = {
   __typename?: 'Query';
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  link?: Maybe<Link>;
+  linkCollection?: Maybe<LinkCollection>;
   release?: Maybe<Release>;
   releaseCollection?: Maybe<ReleaseCollection>;
 };
@@ -407,6 +540,23 @@ export type QueryEntryCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<EntryFilter>;
+};
+
+
+export type QueryLinkArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryLinkCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<LinkOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<LinkFilter>;
 };
 
 
@@ -633,6 +783,13 @@ export type SysFilter = {
   publishedVersion_not_in?: InputMaybe<Array<InputMaybe<Scalars['Float']>>>;
 };
 
+export type GetLinksQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetLinksQuery = { __typename?: 'Query', linkCollection?: { __typename?: 'LinkCollection', items: Array<{ __typename?: 'Link', category?: string | null, href?: string | null, isPinned?: boolean | null, label?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+
+export type LinkFragment = { __typename?: 'Link', category?: string | null, href?: string | null, isPinned?: boolean | null, label?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null };
+
 export type GetReleasesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -640,6 +797,17 @@ export type GetReleasesQuery = { __typename?: 'Query', releaseCollection?: { __t
 
 export type ReleaseFragment = { __typename?: 'Release', title?: string | null, releaseDate?: any | null, hrefAppleMusic?: string | null, hrefYouTube?: string | null, hrefSpotify?: string | null, hrefBandcamp?: string | null, cover?: { __typename?: 'Asset', url?: string | null } | null };
 
+export const LinkFragmentDoc = gql`
+    fragment Link on Link {
+  category
+  href
+  image {
+    url
+  }
+  isPinned
+  label
+}
+    `;
 export const ReleaseFragmentDoc = gql`
     fragment Release on Release {
   title
@@ -653,6 +821,15 @@ export const ReleaseFragmentDoc = gql`
   hrefBandcamp
 }
     `;
+export const GetLinksDocument = gql`
+    query getLinks {
+  linkCollection {
+    items {
+      ...Link
+    }
+  }
+}
+    ${LinkFragmentDoc}`;
 export const GetReleasesDocument = gql`
     query getReleases {
   releaseCollection {
@@ -670,6 +847,9 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
+    getLinks(variables?: GetLinksQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetLinksQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetLinksQuery>(GetLinksDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getLinks', 'query');
+    },
     getReleases(variables?: GetReleasesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetReleasesQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetReleasesQuery>(GetReleasesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getReleases', 'query');
     }

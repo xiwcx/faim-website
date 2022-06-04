@@ -1,0 +1,17 @@
+query getLinks {
+  linkCollection {
+    items {
+      ...Link
+    }
+  }
+}
+
+fragment Link on Link {
+  category
+  href
+  image {
+    url
+  }
+  isPinned
+  label
+}
