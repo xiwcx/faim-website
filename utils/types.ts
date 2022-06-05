@@ -1,10 +1,14 @@
 import { LinkFragment } from "../generated/sdk";
 import { G } from "@mobily/ts-belt";
 
-type PartiallyNonNullable<T, K extends keyof T> = Omit<T, K> &
-  NonNullable<Pick<T, K>>;
+type RequiredNotNull<T> = {
+  [P in keyof T]: NonNullable<T[P]>;
+};
 
-export type UsableLinkFragment = PartiallyNonNullable<LinkFragment, "href">;
+type SetNonNullable<T, K extends keyof T> = T & RequiredNotNull<Pick<T, K>>;
 
-export const isUsableLink = (link: LinkFragment | null): link is LinkFragment =>
-  G.isObject(link) && G.isString(link.href);
+export type UsableLinkFragment = SetNonNullable<LinkFragment, "href">;
+
+export const isUsableLink = (
+  link: LinkFragment | null
+): link is UsableLinkFragment => G.isObject(link) && G.isString(link.href);
