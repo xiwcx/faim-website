@@ -1,7 +1,9 @@
 import { G } from "@mobily/ts-belt";
 import Head from "next/head";
+import { Header } from "./header";
+import { Footer } from "./footer";
 import "./layout-default.css.ts";
-import { NavLink } from "./nav-link";
+import * as styles from "./main.css";
 
 interface LayoutDefaultProps {
   subtitle?: string;
@@ -20,20 +22,17 @@ const LayoutDefault = ({ children, subtitle }: LayoutDefaultProps) => {
   const title = getTitle(subtitle);
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div>
       <Head>
         <title>Faim</title>
+        <style>@import url(https://use.typekit.net/qyg2uaf.css);</style>
       </Head>
-      <header>
-        <h1>Faim</h1>
 
-        <nav>
-          <NavLink href="/" text="releases" />
-          <NavLink href="/links/" text="links" />
-          <NavLink href="/store/" text="store" />
-        </nav>
-      </header>
-      <main>{children}</main>
+      <Header />
+
+      <main className={styles.main}>{children}</main>
+
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import { G } from "@mobily/ts-belt";
 import type { ReleaseFragment } from "../../generated/sdk";
+import { Typography } from "../typography/typography";
 import { ReleaseLink } from "./release-link";
+import * as styles from "./release.css";
 
 interface ReleaseProps {
   release: ReleaseFragment;
@@ -8,14 +10,14 @@ interface ReleaseProps {
 
 export const Release = ({ release }: ReleaseProps) => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <p>{release.title}</p>
-
+    <div className={styles.releaseContainer}>
       {G.isObject(release.cover) && G.isString(release.cover?.url) && (
-        <img src={release.cover.url} />
+        <img className={styles.releaseImage} src={release.cover.url} />
       )}
 
-      <ul>
+      <Typography style="h2">{release.title}</Typography>
+
+      <ul className={styles.linkList}>
         {G.isString(release.hrefBandcamp) && (
           <ReleaseLink href={release.hrefBandcamp} brand="bandcamp" />
         )}
