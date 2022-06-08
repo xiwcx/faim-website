@@ -11,7 +11,7 @@ export const display = style({
   fontWeight: 400,
   fontStyle: "normal",
   fontSize: "4em",
-  lineHeight: 1.2,
+  lineHeight: 1,
   margin: 0,
 });
 

@@ -20,6 +20,7 @@ export const rawVars = {
     lg: "1em",
   },
   unit: {
+    down2: ".25em",
     down1: ".5em",
     def: "1em",
     up1: "2em",

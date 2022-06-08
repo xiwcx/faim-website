@@ -27,7 +27,7 @@ export const IconBandcap = ({ fill = "navy" }: IconProps) => {
       <g clipPath="url(#clip-path-4)">
         <path
           fill="none"
-          stroke="#000"
+          stroke={color}
           strokeMiterlimit="10"
           strokeWidth="32"
           d="M257 513c141.38 0 256-114.62 256-256S398.38 1 257 1 1 115.62 1 257s114.62 256 256 256zm0 0"

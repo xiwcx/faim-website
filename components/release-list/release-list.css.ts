@@ -3,5 +3,5 @@ import { styleVars } from "../../utils/styles/index.css";
 
 export const releaseList = style({
   display: "grid",
-  gridGap: styleVars.unit.up1,
+  gridGap: styleVars.unit.up2,
 });

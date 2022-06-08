@@ -2,10 +2,11 @@ import { style } from "@vanilla-extract/css";
 import { styleVars } from "../../utils/styles/index.css";
 
 export const main = style({
-  padding: `${styleVars.unit.up1} ${styleVars.unit.def}`,
+  paddingBlockEnd: styleVars.unit.up1,
+  paddingBlockStart: styleVars.unit.up1,
 });
 
 export const content = style({
-  margin: "0 auto",
+  margin: `${styleVars.unit.up1} auto`,
   maxWidth: "36em",
 });

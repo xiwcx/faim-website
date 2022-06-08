@@ -16,7 +16,9 @@ export const Release = ({ release }: ReleaseProps) => {
       )}
 
       <div className={styles.text}>
-        <Typography style="h1">{release.title}</Typography>
+        <Typography className={styles.title} style="h1">
+          {release.title}
+        </Typography>
 
         <ul className={styles.ul}>
           {G.isString(release.hrefBandcamp) && (

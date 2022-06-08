@@ -9,8 +9,9 @@ globalStyle("html, body", {
 globalStyle("body", {
   backgroundColor: styleVars.color.navy,
   color: styleVars.color.white,
-  ...fontBody,
+  padding: styleVars.unit.def,
   fontSize: "clamp(1rem, 0.9rem + 1vw, 2rem)",
+  ...fontBody,
 });
 
 globalStyle("img", {
