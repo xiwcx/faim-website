@@ -10,30 +10,32 @@ interface ReleaseProps {
 
 export const Release = ({ release }: ReleaseProps) => {
   return (
-    <div className={styles.releaseContainer}>
+    <div className={styles.release}>
       {G.isObject(release.cover) && G.isString(release.cover?.url) && (
-        <img className={styles.releaseImage} src={release.cover.url} />
+        <img className={styles.image} src={release.cover.url} />
       )}
 
-      <Typography style="h2">{release.title}</Typography>
+      <div className={styles.text}>
+        <Typography style="h1">{release.title}</Typography>
 
-      <ul className={styles.linkList}>
-        {G.isString(release.hrefBandcamp) && (
-          <ReleaseLink href={release.hrefBandcamp} brand="bandcamp" />
-        )}
+        <ul className={styles.ul}>
+          {G.isString(release.hrefBandcamp) && (
+            <ReleaseLink href={release.hrefBandcamp} brand="bandcamp" />
+          )}
 
-        {G.isString(release.hrefSpotify) && (
-          <ReleaseLink href={release.hrefSpotify} brand="spotify" />
-        )}
+          {G.isString(release.hrefSpotify) && (
+            <ReleaseLink href={release.hrefSpotify} brand="spotify" />
+          )}
 
-        {G.isString(release.hrefYouTube) && (
-          <ReleaseLink href={release.hrefYouTube} brand="youtube" />
-        )}
+          {G.isString(release.hrefYouTube) && (
+            <ReleaseLink href={release.hrefYouTube} brand="youtube" />
+          )}
 
-        {G.isString(release.hrefAppleMusic) && (
-          <ReleaseLink href={release.hrefAppleMusic} brand="apple" />
-        )}
-      </ul>
+          {G.isString(release.hrefAppleMusic) && (
+            <ReleaseLink href={release.hrefAppleMusic} brand="apple" />
+          )}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -24,13 +24,15 @@ const LayoutDefault = ({ children, subtitle }: LayoutDefaultProps) => {
   return (
     <div>
       <Head>
-        <title>Faim</title>
+        <title>Faim | Denver Hardcore</title>
         <style>@import url(https://use.typekit.net/qyg2uaf.css);</style>
       </Head>
 
       <Header />
 
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        <div className={styles.content}>{children}</div>
+      </main>
 
       <Footer />
     </div>

@@ -14,7 +14,7 @@ interface TypographyProps {
 
 export const Typography = ({
   as = "p",
-  color = "navy",
+  color = "white",
   className = "",
   children,
   style = "body",

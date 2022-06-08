@@ -15,9 +15,16 @@ export const rawVars = {
     body: "arial",
   },
   borderRadius: {
-    sm: ".25rem",
-    md: ".5rem",
-    lg: "1rem",
+    sm: ".25em",
+    md: ".5em",
+    lg: "1em",
+  },
+  unit: {
+    down1: ".5em",
+    def: "1em",
+    up1: "2em",
+    up2: "4em",
+    up3: "8em",
   },
 } as const;
 

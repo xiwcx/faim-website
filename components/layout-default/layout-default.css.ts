@@ -7,9 +7,10 @@ globalStyle("html, body", {
 });
 
 globalStyle("body", {
-  backgroundColor: styleVars.color.yellow,
-  color: styleVars.color.navy,
+  backgroundColor: styleVars.color.navy,
+  color: styleVars.color.white,
   ...fontBody,
+  fontSize: "clamp(1rem, 0.9rem + 1vw, 2rem)",
 });
 
 globalStyle("img", {

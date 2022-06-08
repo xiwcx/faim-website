@@ -1,48 +1,23 @@
-import { repeat } from "@mobily/ts-belt/dist/types/Array";
 import { style } from "@vanilla-extract/css";
 import { styleVars } from "../../utils/styles/index.css";
 
 const areaImage = "image";
-const areaTitle = "title";
+const areaText = "text";
 
-export const releaseContainer = style({
+export const release = style({
   display: "grid",
-  backgroundColor: styleVars.color.white,
-  padding: "0.5rem",
-  borderRadius: styleVars.borderRadius.md,
+  gridTemplateAreas: `"${areaImage} ${areaText}"`,
 });
 
-export const releaseImage = style({
-  borderRadius: styleVars.borderRadius.sm,
+export const image = style({
+  gridArea: areaImage,
 });
 
-const areaYoutube = "youtube";
-const areaBandcamp = "bandcamp";
-const areaSpotify = "spotify";
-const areaApple = "apple";
+export const text = style({
+  gridArea: areaText,
+});
 
-export const linkList = style({
+export const ul = style({
   display: "grid",
-  gridAutoFlow: "column",
-  gridTemplateAreas: `"${areaBandcamp} ${areaSpotify} ${areaYoutube} ${areaApple}"`,
-  gridTemplateColumns: "repeat(4, 1fr)",
-  listStyleType: "none",
-  padding: 0,
-  margin: 0,
-});
-
-export const bandcamp = style({
-  gridArea: areaBandcamp,
-});
-
-export const spotify = style({
-  gridArea: areaSpotify,
-});
-
-export const youtube = style({
-  gridArea: areaYoutube,
-});
-
-export const apple = style({
-  gridArea: areaApple,
+  gridGap: styleVars.unit.down1,
 });
