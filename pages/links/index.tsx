@@ -16,9 +16,7 @@ const Links: NextPage<LinkProps> = ({ data }) => {
 
   return (
     <LayoutDefault>
-      <ul>
-        {A.isNotEmpty(filteredLinks) && <LinkList links={filteredLinks} />}
-      </ul>
+      <LinkList links={filteredLinks} />
     </LayoutDefault>
   );
 };

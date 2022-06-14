@@ -27,8 +27,7 @@ export const Header = () => {
 
       <nav>
         <NavLink href="/" text="releases" />
-        <NavLink href="/about" text="about" />
-        {/* <NavLink href="/links/" text="links" /> */}
+        <NavLink href="/links" text="links" />
         <NavLink href="/store" text="store" />
         <a
           className={navLinkStyles.navLinkIcon}
