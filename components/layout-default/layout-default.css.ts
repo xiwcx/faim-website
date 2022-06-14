@@ -23,6 +23,6 @@ globalStyle("body", {
   },
 });
 
-globalStyle("img", {
+globalStyle("img, svg", {
   maxWidth: "100%",
 });
