@@ -12,6 +12,15 @@ globalStyle("body", {
   padding: styleVars.unit.def,
   fontSize: "clamp(1rem, 0.9rem + 1vw, 2rem)",
   ...fontBody,
+
+  "@media": {
+    "screen and (min-width: 30em)": {
+      padding: styleVars.unit.up1,
+    },
+    "screen and (min-width: 60em)": {
+      padding: styleVars.unit.up2,
+    },
+  },
 });
 
 globalStyle("img", {

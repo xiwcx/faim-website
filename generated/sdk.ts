@@ -832,7 +832,7 @@ export const GetLinksDocument = gql`
     ${LinkFragmentDoc}`;
 export const GetReleasesDocument = gql`
     query getReleases {
-  releaseCollection(order: releaseDate_ASC) {
+  releaseCollection(order: releaseDate_DESC) {
     items {
       ...Release
     }

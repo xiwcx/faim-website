@@ -1,5 +1,8 @@
 import { style } from "@vanilla-extract/css";
 
+// https://fonts.adobe.com/fonts/octin#recommendations-section
+// https://fonts.adobe.com/fonts/halcom
+
 export const fontBody = {
   fontFamily: "unit-rounded, sans-serif",
   fontWeight: 300,

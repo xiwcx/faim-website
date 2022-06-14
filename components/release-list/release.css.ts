@@ -22,7 +22,7 @@ export const title = style({
   marginBlockEnd: styleVars.unit.down1,
   paddingInlineStart: styleVars.unit.def,
   display: "inline-block",
-  borderBlockEndWidth: "4px",
+  borderBlockEndWidth: styleVars.unit.down3,
   borderBlockEndStyle: "solid",
   borderBlockEndColor: styleVars.color.maroon,
   transform: "translateX(-.5em)",
