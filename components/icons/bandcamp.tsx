@@ -1,7 +1,7 @@
 import { styleVars } from "../../utils/styles/index.css";
 import { IconProps } from "./icon";
 
-export const IconBandcap = ({ fill = "navy" }: IconProps) => {
+export const IconBandcamp = ({ fill = "navy" }: IconProps) => {
   const color = styleVars.color[fill];
 
   return (
