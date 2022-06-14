@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
+import { About } from "../../components/about/about";
 import LayoutDefault from "../../components/layout-default/layout-default";
-import { StoreList } from "../../components/store-list/store-list";
 
 const Store: NextPage = () => {
   return (
     <LayoutDefault>
-      <StoreList />
+      <About />
     </LayoutDefault>
   );
 };

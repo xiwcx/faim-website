@@ -1,6 +1,8 @@
 import { G } from "@mobily/ts-belt";
 import type { ReleaseFragment } from "../../generated/sdk";
+import { Typography } from "../typography/typography";
 import { ReleaseLink } from "./release-link";
+import * as styles from "./release.css";
 
 interface ReleaseProps {
   release: ReleaseFragment;
@@ -8,30 +10,34 @@ interface ReleaseProps {
 
 export const Release = ({ release }: ReleaseProps) => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <p>{release.title}</p>
-
+    <div className={styles.release}>
       {G.isObject(release.cover) && G.isString(release.cover?.url) && (
-        <img src={release.cover.url} />
+        <img className={styles.image} src={release.cover.url} />
       )}
 
-      <ul>
-        {G.isString(release.hrefBandcamp) && (
-          <ReleaseLink href={release.hrefBandcamp} brand="bandcamp" />
-        )}
+      <div className={styles.text}>
+        <Typography className={styles.title} style="h1">
+          {release.title}
+        </Typography>
 
-        {G.isString(release.hrefSpotify) && (
-          <ReleaseLink href={release.hrefSpotify} brand="spotify" />
-        )}
+        <ul className={styles.ul}>
+          {G.isString(release.hrefBandcamp) && (
+            <ReleaseLink href={release.hrefBandcamp} brand="bandcamp" />
+          )}
 
-        {G.isString(release.hrefYouTube) && (
-          <ReleaseLink href={release.hrefYouTube} brand="youtube" />
-        )}
+          {G.isString(release.hrefSpotify) && (
+            <ReleaseLink href={release.hrefSpotify} brand="spotify" />
+          )}
 
-        {G.isString(release.hrefAppleMusic) && (
-          <ReleaseLink href={release.hrefAppleMusic} brand="apple" />
-        )}
-      </ul>
+          {G.isString(release.hrefYouTube) && (
+            <ReleaseLink href={release.hrefYouTube} brand="youtube" />
+          )}
+
+          {G.isString(release.hrefAppleMusic) && (
+            <ReleaseLink href={release.hrefAppleMusic} brand="apple" />
+          )}
+        </ul>
+      </div>
     </div>
   );
 };

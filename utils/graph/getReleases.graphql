@@ -1,5 +1,5 @@
 query getReleases {
-  releaseCollection {
+  releaseCollection(order: releaseDate_DESC) {
     items {
       ...Release
     }
