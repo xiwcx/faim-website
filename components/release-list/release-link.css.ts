@@ -14,6 +14,12 @@ export const li = style({
   listStyleType: "none",
 });
 
+export const href = style({
+  textDecoration: "none",
+});
+
 export const link = style({
+  display: "inline-grid",
+  gridTemplateColumns: "auto 1fr",
   padding: `${styleVars.unit.down2} ${styleVars.unit.down1}`,
 });
