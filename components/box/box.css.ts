@@ -13,7 +13,6 @@ export const box = style({
   backgroundColor: styleVars.color.yellow,
   color: styleVars.color.navy,
   display: "inline-block",
-  lineHeight: 0.7,
   textDecoration: "none",
   // https://css-generators.com/custom-corners/
   mask: `conic-gradient(from -135deg at top ${cornerSize} left ${cornerSize}, #000, #0000 1deg 179deg,#000 180deg) 0    0   /100% 100% no-repeat`,

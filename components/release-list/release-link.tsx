@@ -32,10 +32,10 @@ const data: Record<Brand, { label: string; icon: React.ReactNode }> = {
 export const ReleaseLink = ({ brand, href }: ReleaseLinkProps) => {
   return (
     <li className={styles.li}>
-      <a href={href}>
+      <a className={styles.href} href={href}>
         <Box className={styles.link} as="span">
           <div className={styles.icon}>{data[brand].icon}</div>
-          Listen on {data[brand].label}
+          <span>Listen on {data[brand].label}</span>
         </Box>
       </a>
     </li>
