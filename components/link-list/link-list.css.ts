@@ -7,6 +7,11 @@ const ul = style({
   margin: 0,
 });
 
+export const pageTitle = style({
+  paddingBlockEnd: styleVars.unit.def,
+  textAlign: "center",
+});
+
 export const linkList = style([
   ul,
   {
