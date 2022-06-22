@@ -4,9 +4,9 @@ import { D } from "@mobily/ts-belt";
 import * as styles from "./box.css";
 
 interface BoxProps {
+  as?: keyof React.ReactHTML;
   children: React.ReactNode;
   className?: string;
-  as?: keyof React.ReactHTML;
   size?: keyof typeof styles.corner;
 }
 

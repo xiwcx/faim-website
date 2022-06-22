@@ -3,7 +3,7 @@ import { IconSafeInside } from "../icons/safe-inside";
 import * as styles from "./footer.css";
 
 export const Footer = () => (
-  <footer className={styles.footer}>
+  <footer>
     <a className={styles.labelLink} href="https://www.safeinsiderecords.com/">
       <IconSafeInside fill="white" />
     </a>
