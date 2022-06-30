@@ -18,7 +18,8 @@ const getLineup = (bands: string[]) => {
     (band) => band.toLowerCase() !== "faim"
   );
 
-  if (A.isNotEmpty(bandsWithoutSelf)) return `w/ ${bands.join(", ")}`;
+  if (A.isNotEmpty(bandsWithoutSelf))
+    return `w/ ${bandsWithoutSelf.join(", ")}`;
 
   return "";
 };
@@ -43,17 +44,17 @@ export const ShowItem = ({ show }: ShowItemProps) => {
           {formatDate(show.starts_at)}
         </Typography>
 
+        <Typography className={styles.location}>
+          {show.venue.location}
+        </Typography>
+
         <Typography className={styles.time}>
-          {show.title} @ {formatTime(show.starts_at)}
+          {show.venue.name} @ {formatTime(show.starts_at)}
         </Typography>
 
         {S.isNotEmpty(lineup) && (
           <Typography className={styles.lineup}>{lineup}</Typography>
         )}
-
-        <Typography className={styles.location}>
-          {show.venue.location}
-        </Typography>
       </div>
 
       <div className={styles.links}>
